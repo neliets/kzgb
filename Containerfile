@@ -1,6 +1,6 @@
 ### 2. SOURCE IMAGE
 ## this is a standard Containerfile FROM using the build ARGs above to select the right upstream image
-FROM ghcr.io/ublue-os/ucore-minimal:zfs
+FROM ghcr.io/ublue-os/ucore-minimal:stable-zfs
 
 
 ### 3. MODIFICATIONS
