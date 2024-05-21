@@ -23,16 +23,6 @@
         "path": "/etc/autorebase",
         "mode": 492
       }
-    ],
-    "files": [
-      {
-        "path": "/etc/NetworkManager/system-connections/${interface}.nmconnection",
-        "contents": {
-          "compression": "gzip",
-          "source": "data:;base64,H4sIAAAAAAAC/1SKwQrCMBAF7/sdHm1kS5F62C8pPSzJKw00m5JEoYj/7knF2wwzk89m8C1mmykGOT2jNZRFPV7Ujh2CtqIYGn1DZ5rwf05xfwwzaQgFtbLwrXd8HR27cbz0w/nnTMGqsOMPdxVa/CqU9OgWjZssulVQQltzkKR2143eAQAA///GQM2eqAAAAA=="
-        },
-        "mode": 384
-      }
     ]
   },
   "systemd": {
