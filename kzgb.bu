@@ -1,0 +1,13 @@
+variant: fcos
+version: 1.5.0
+passwd:
+  users:
+    - name: ttd
+      password_hash: $y$j9T$xOzEGeOjGDhjYO521m8Da/$oncJ9EaZQIBRlI0qaUDpearJ2.FXmVM/XpjswE1tX21
+      home_dir: /home/ttd
+      no_create_home: false
+      groups:
+        - wheel
+        - plugdev
+        - sudo
+      shell: /bin/bash
