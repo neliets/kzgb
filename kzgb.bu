@@ -15,14 +15,14 @@ storage:
     - path: /etc/autorebase
       mode: 0754
   files:
-    - path: /etc/NetworkManager/system-connections/eth0.nmconnection
+    - path: /etc/NetworkManager/system-connections/${interface}.nmconnection
       mode: 0600
       contents:
         inline: |
           [connection]
-          id=eth0
+          id=${interface}
           type=ethernet
-          interface-name=eth0
+          interface-name=${interface}
           [ipv4]
           address1=192.168.1.88/24,192.168.1.1
           dns=1.1.1.1
