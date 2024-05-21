@@ -1,6 +1,6 @@
 ### 2. SOURCE IMAGE
 ## this is a standard Containerfile FROM using the build ARGs above to select the right upstream image
-FROM quay.io/fedora/fedora-coreos:stable
+FROM ghcr.io/ublue-os/ucore-minimal:zfs
 
 
 ### 3. MODIFICATIONS

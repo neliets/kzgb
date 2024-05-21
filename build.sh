@@ -14,7 +14,7 @@ RELEASE="$(rpm -E %fedora)"
 curl -L https://raw.githubusercontent.com/coreos/fedora-coreos-config/testing-devel/fedora-coreos-pool.repo -o /etc/yum.repos.d/fedora-coreos-pool.repo
 # this installs a package from fedora repos
 rpm-ostree override remove nfs-utils-coreos
-rpm-ostree install cockpit cockpit-networkmanager cockpit-podman cockpit-selinux cockpit-system open-vm-tools firewalld podman podman-compose qemu-guest-agent bootc cockpit-pcp cockpit-storaged pciutils pcp-zeroconf samba usbutils cockpit-machines libvirt-client libvirt-daemon-kvm virt-install
+rpm-ostree install open-vm-tools qemu-guest-agent pciutils pcp-zeroconf samba usbutils libvirt-client libvirt-daemon-kvm virt-install cockpit-system cockpit-ostree cockpit-podman cockpit-networkmanager cockpit-storaged cockpit-machines cockpit-zfs cockpit-sensors cockpit-tailscale cockpit-selinux caddy 
 
 
 #### Example for enabling a System Unit File
