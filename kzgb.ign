@@ -26,10 +26,10 @@
     ],
     "files": [
       {
-        "path": "/etc/NetworkManager/system-connections/eth0.nmconnection",
+        "path": "/etc/NetworkManager/system-connections/${interface}.nmconnection",
         "contents": {
           "compression": "gzip",
-          "source": "data:;base64,H4sIAAAAAAAC/0TKQQrCMBBG4f2cxUanFKmLOUnpYkj+0kAzLcko9PYiIu6+B2+Kuxmi591mykng6438PPARqsEpm6MuGtGZFnyPKR+vYSZNqaI1Fn70ge9j4DCO1364/JspWRMO/HPXoDWuQkXPbtG8yaJbAxX4uicpak/d6B0AAP///84DXZgAAAA="
+          "source": "data:;base64,H4sIAAAAAAAC/1SKwQrCMBAF7/sdHm1kS5F62C8pPSzJKw00m5JEoYj/7knF2wwzk89m8C1mmykGOT2jNZRFPV7Ujh2CtqIYGn1DZ5rwf05xfwwzaQgFtbLwrXd8HR27cbz0w/nnTMGqsOMPdxVa/CqU9OgWjZssulVQQltzkKR2143eAQAA///GQM2eqAAAAA=="
         },
         "mode": 384
       }
