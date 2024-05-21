@@ -21,7 +21,6 @@ rpm-ostree install cockpit cockpit-networkmanager cockpit-podman cockpit-selinux
 systemctl enable podman.socket
 systemctl enable cockpit.service
 systemctl enable rpm-ostreed-automatic.timer
-cp /usr/share/ublue-os/update-services/etc/rpm-ostreed.conf /etc/rpm-ostreed.conf
 systemctl enable getty@tty1
 rm /etc/ssh/sshd_config.d/40-disable-passwords.conf
 cp -a /etc/firewalld/firewalld-server.conf /etc/firewalld/firewalld.conf
