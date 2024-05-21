@@ -16,5 +16,27 @@
         "shell": "/bin/bash"
       }
     ]
+  },
+  "storage": {
+    "directories": [
+      {
+        "path": "/etc/autorebase",
+        "mode": 492
+      }
+    ]
+  },
+  "systemd": {
+    "units": [
+      {
+        "contents": "[Unit]\nDescription=Autorebase to unsigned OCI and reboot\nConditionPathExists=!/etc/autorebase/unverified\nConditionPathExists=!/etc/autorebase/signed\nAfter=network-online.target\nWants=network-online.target\n[Service]\nType=oneshot\nStandardOutput=journal+console\nExecStart=/usr/bin/rpm-ostree rebase --bypass-driver ostree-unverified-registry:ghcr.io/neliets/kzgb:la\nExecStart=/usr/bin/touch /etc/autorebase/unverified\nExecStart=/usr/bin/systemctl disable ucore-unsigned-autorebase.service\nExecStart=/usr/bin/systemctl reboot\n[Install]\nWantedBy=multi-user.target\n",
+        "enabled": true,
+        "name": "ucore-unsigned-autorebase.service"
+      },
+      {
+        "contents": "[Unit]\nDescription=uCore autorebase to signed OCI and reboot\nConditionPathExists=/etc/autorebase/unverified\nConditionPathExists=!/etc/autorebase/verified\nAfter=network-online.target\nWants=network-online.target\n[Service]\nType=oneshot\nStandardOutput=journal+console\nExecStart=/usr/bin/rpm-ostree rebase --bypass-driver ostree-image-signed:docker://ghcr.io/neliets/kzgb:latest\nExecStart=/usr/bin/touch /etc/autorebase/signed\nExecStart=/usr/bin/systemctl disable ucore-signed-autorebase.service\nExecStart=/usr/bin/systemctl reboot\n[Install]\nWantedBy=multi-user.target",
+        "enabled": true,
+        "name": "ucore-signed-autorebase.service"
+      }
+    ]
   }
 }
