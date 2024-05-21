@@ -43,12 +43,12 @@ systemd:
         [Service]
         Type=oneshot
         StandardOutput=journal+console
-        ExecStart=/usr/bin/rpm-ostree rebase --bypass-driver ostree-unverified-registry:ghcr.io/neliets/kzgb:latest
+        ExecStart=/usr/bin/rpm-ostree rebase --bypass-driver ostree-unverified-registry:ghcr.io/neliets/kzgb
         ExecStart=/usr/bin/touch /etc/autorebase/unverified
         ExecStart=/usr/bin/systemctl disable ucore-unsigned-autorebase.service
         ExecStart=/usr/bin/systemctl reboot
         [Install]
-        WantedBy=multi-user.target
+        WantedBy=getty.target
     - name: ucore-signed-autorebase.service
       enabled: true
       contents: |
@@ -66,4 +66,4 @@ systemd:
         ExecStart=/usr/bin/systemctl disable ucore-signed-autorebase.service
         ExecStart=/usr/bin/systemctl reboot
         [Install]
-        WantedBy=multi-user.target
+        WantedBy=getty.target
