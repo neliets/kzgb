@@ -8,13 +8,27 @@ passwd:
       no_create_home: false
       groups:
         - wheel
-        - plugdev
         - sudo
       shell: /bin/bash
 storage:
   directories:
     - path: /etc/autorebase
       mode: 0754
+  files:
+    - path: /etc/NetworkManager/system-connections/eth0.nmconnection
+      mode: 0600
+      contents:
+        inline: |
+          [connection]
+          id=eth0
+          type=ethernet
+          interface-name=eth0
+          [ipv4]
+          address1=192.168.1.88/24,192.168.1.1
+          dns=1.1.1.1
+          dns-search=
+          may-fail=false
+          method=manual
 systemd:
   units:
     - name: ucore-unsigned-autorebase.service
