@@ -14,8 +14,13 @@ RELEASE="$(rpm -E %fedora)"
 curl -L https://raw.githubusercontent.com/coreos/fedora-coreos-config/testing-devel/fedora-coreos-pool.repo -o /etc/yum.repos.d/fedora-coreos-pool.repo
 # this installs a package from fedora repos
 rpm-ostree override remove nfs-utils-coreos
-rpm-ostree install open-vm-tools qemu-guest-agent pciutils pcp-zeroconf samba usbutils libvirt-client libvirt-daemon-kvm virt-install cockpit-system cockpit-ostree cockpit-podman cockpit-networkmanager cockpit-storaged cockpit-machines cockpit-zfs cockpit-sensors cockpit-tailscale cockpit-selinux caddy 
+rpm-ostree install open-vm-tools qemu-guest-agent pciutils pcp-zeroconf samba usbutils wget glances libvirt-client libvirt-daemon-kvm virt-install cockpit-system cockpit-ostree cockpit-podman cockpit-networkmanager cockpit-storaged cockpit-machines cockpit-selinux caddy git
 
+git clone https://github.com/45drives/cockpit-zfs-manager.git
+cp -r cockpit-zfs-manager/zfs /usr/share/cockpit
+rm -rf cockpit-zfs-manager
+mkdir /etc/caddy
+wget https://raw.githubusercontent.com/neliets/kzgb/main/Caddyfile -O /etc/caddy/Caddyfile
 
 #### Example for enabling a System Unit File
 systemctl enable podman.socket

@@ -1,0 +1,47 @@
+n8n.kzgb.xyz {
+    reverse_proxy localhost:5678
+}
+
+portainer.kzgb.xyz {
+    reverse_proxy localhost:9000
+}
+
+paper.kzgb.xyz {
+    reverse_proxy localhost:8665
+}
+
+directus.kzgb.xyz {
+    reverse_proxy localhost:8055
+}
+
+nok.kzgb.xyz {
+    reverse_proxy localhost:5007
+}
+
+eur.kzgb.xyz {
+    reverse_proxy localhost:5006
+}
+
+jellyfin.kzgb.xyz {
+    reverse_proxy localhost:8096
+}
+
+cloud.kzgb.xyz {
+    reverse_proxy localhost:11000
+}
+
+photos.kzgb.xyz {
+    reverse_proxy localhost:2283
+}
+
+ntfy.kzgb.xyz {
+    reverse_proxy localhost:6666
+}
+
+notes.kzgb.xyz {
+    reverse_proxy localhost:5230
+}
+
+rss.kzgb.xyz {
+    reverse_proxy localhost:8082
+}
