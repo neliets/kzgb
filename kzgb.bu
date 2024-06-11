@@ -10,3 +10,15 @@ passwd:
         - wheel
         - sudo
       shell: /bin/bash
+storage:
+  disks:
+    - device: /dev/sda
+      wipe_table: true
+      partitions:
+        - number: 2
+          label: data
+          start_mib: 49152
+          resize: true
+        - number: 3
+          label: swap
+          size_mib: 4096
