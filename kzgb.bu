@@ -13,7 +13,6 @@ passwd:
 storage:
   disks:
     - device: /dev/sda
-      wipe_table: false
       partitions:
         - number: 4
           label: root
